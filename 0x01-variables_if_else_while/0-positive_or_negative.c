@@ -5,7 +5,11 @@
 
 /* betty style doc for function main goes there */
 /**
- * main - returns (0) success
+ * main - Entry point
+ * prints  "n is positive" if n > 0
+ * prints "n is zero" if n = 0
+ * prints "n is negative" if n < 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
