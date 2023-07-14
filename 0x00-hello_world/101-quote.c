@@ -3,12 +3,12 @@
 /**
  * main - Entry point
  *
- * Return: Always 1 (Faild)
+ * Return: Always 1 (Faield)
  */
 
 int main(void)
 {
-	fprintf(stderr, "and that piece of art is useful\"" +
-			" - Dora Korpar, 2015-10-19 ");
-	return (1);
+	char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+fprintf(stderr, "%s", s);
+return (1);
 }
