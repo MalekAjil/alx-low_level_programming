@@ -4,8 +4,8 @@
 #include <stdio.h>
 
 /* betty style doc for function main goes there */
-/*
- * main function returns (0) success
+/**
+ * main - returns (0) success
  */
 int main(void)
 {
