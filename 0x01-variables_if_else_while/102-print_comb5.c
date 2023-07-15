@@ -25,7 +25,7 @@ int main(void)
 			putchar(32);
 			putchar((j / 10) + 48);
 			putchar(l + 48);
-			if (i != 55)
+			if (i != 98)
 				putchar(44);
 		}
 	}
