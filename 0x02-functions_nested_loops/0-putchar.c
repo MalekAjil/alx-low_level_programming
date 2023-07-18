@@ -3,9 +3,13 @@
 
 
 /**
- * main alwayes return (0) success
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
-int main(void){
+
+int main(void)
+{
 	_putchar("_putchar");
-	return(0);
+	return (0);
 }
