@@ -8,10 +8,11 @@ int main(void)
 {
 	int i, s;
 
-	s=0;
+	s = 0;
 	for (i = 1 ; i < 1024 ; i++)
 	{
 		s += i * 3 + i * 5;
 	}
 	printf("%d\n", s);
+	return (0);
 }
