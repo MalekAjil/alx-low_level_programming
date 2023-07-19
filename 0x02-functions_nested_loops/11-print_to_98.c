@@ -2,10 +2,9 @@
 #include "main.h"
 
 /**
- * add - returns the sum of two numbers
- * @a: the first parameter
- * @b: the second parameter
- * Return: the sum of two numbers
+ * print_to_98 - prints the numbers for specified number till 98 
+ * @n: the number
+ * Return: void
  */
 void print_to_98(int n)
 {
@@ -15,18 +14,18 @@ void print_to_98(int n)
 	{
 		for (i = n ; i < 99 ; i++)
 		{
-			printf("%d,\n", i);
+			printf("%d", i);
+			if (i != 98)
+				printf(", ");
 		}
-	}
-	else if (n == 98)
-	{
-		printf("98\n");
 	}
 	else
 	{
 		for (i = n ; i > 97 ; i--)
 		{
-			printf("%d,\n", i);
+			printf("%d", i);
+			if (i != 98)
+				printf(", ");
 		}
 	}
 }
