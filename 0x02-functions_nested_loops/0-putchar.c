@@ -9,6 +9,9 @@
 
 int main(void)
 {
+	int i;
+
+	i=0;
 	_putchar("_putchar");
 	return (0);
 }
