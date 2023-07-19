@@ -7,7 +7,7 @@
  */
 void print_times_table(int n)
 {
-	int i, j, m;
+	int i, j, m, d;
 
 	if (n >= 0 && n < 16)
 	{
@@ -21,10 +21,10 @@ void print_times_table(int n)
 				else if (n * n > 99)
 				{
 					_putchar(m / 100 == 0 ? ' ' : '0' + m / 100);
-					m -= m / 100 * 100;
-					_putchar(m / 10 == 0 ? ' ' : '0' + m / 10);
-					m -= m / 10 * 10;
-					_putchar('0' + m);
+					d = m - (m / 100 * 100);
+					_putchar(d / 10 == 0 && m / 100 == 0 ? ' ' : '0' + d / 10);
+					d -= d / 10 * 10;
+					_putchar('0' + d);
 				}
 				else
 				{
