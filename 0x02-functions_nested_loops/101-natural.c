@@ -9,10 +9,12 @@ int main(void)
 	int i, s;
 
 	s = 0;
-	for (i = 1 ; i < 1024 ; i++)
+	i = 0;
+	while (i * 3 < 1024 || i * 5 < 1024)
 	{
 		s += i * 3;
 		s += i * 5;
+		i++;
 	}
 	printf("%d\n", s);
 	return (0);
