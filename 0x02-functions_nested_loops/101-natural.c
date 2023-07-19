@@ -11,7 +11,8 @@ int main(void)
 	s = 0;
 	for (i = 1 ; i < 1024 ; i++)
 	{
-		s += i * 3 + i * 5;
+		s += i * 3;
+		s += i * 5;
 	}
 	printf("%d\n", s);
 	return (0);
