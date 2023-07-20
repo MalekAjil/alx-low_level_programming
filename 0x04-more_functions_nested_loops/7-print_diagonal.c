@@ -14,7 +14,10 @@ void print_diagonal(int n)
 		for (j = 0; j < n; j++)
 		{
 			if (i == j)
+			{
 				_putchar(92);
+				continue;
+			}
 			else
 				_putchar(' ');
 		}
