@@ -1,4 +1,22 @@
 #include<stdio.h>
+#include "main.h"
+
+int fibonacci(int);
+/**
+ * main - Entry point
+ * Return: always 0 (success)
+ */
+int main(void)
+{
+	int i;
+
+	for (i = 1 ; i <= 50 ; i++)
+	{
+		printf("%d, ", fibonacci(i));
+	}
+	printf("\n");
+	return (0);
+}
 
 /**
  * fibonacci - recursive function which returns fibonacci sequence
@@ -19,18 +37,4 @@ int fibonacci(int n)
 	{
 		return (fibonacci(n - 2) + fibonacci(n - 1));
 	}
-}
-
-/**
- * main - Entry point
- * Return: always 0 (success)
- */
-int main(void)
-{
-	int i;
-
-	for (i = 1 ; i <= 50 ; i++)
-		printf("%d, ", fibonacci(i));
-	printf("\n");
-	return (0);
 }
