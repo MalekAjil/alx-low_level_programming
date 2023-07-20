@@ -29,10 +29,8 @@ int main(void)
 {
 	int i;
 
-	for (i = 0 ; i < 50 ; i++)
-	{
+	for (i = 1 ; i <= 50 ; i++)
 		printf("%d, ", fibonacci(i));
-	}
 	printf("\n");
 	return (0);
 }
