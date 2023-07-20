@@ -7,7 +7,7 @@
 int main(void)
 {
 	int i;
-        double s1, s, t;
+	double s1, s, t;
 
 	s1 = 0;
 	s = 1;
