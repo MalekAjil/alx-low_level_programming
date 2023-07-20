@@ -1,7 +1,6 @@
 #include<stdio.h>
-#include "main.h"
 
-int fibonacci(int);
+long fibonacci(int);
 /**
  * main - Entry point
  * Return: always 0 (success)
@@ -12,7 +11,9 @@ int main(void)
 
 	for (i = 1 ; i <= 50 ; i++)
 	{
-		printf("%d, ", fibonacci(i));
+		printf("%li", fibonacci(i));
+		if (i != 50)
+			printf(", ");
 	}
 	printf("\n");
 	return (0);
@@ -23,7 +24,7 @@ int main(void)
  * @n: max number
  * Return: fibunacci number correspounding to n
  */
-int fibonacci(int n)
+long fibonacci(int n)
 {
 	if (n == 0)
 	{
