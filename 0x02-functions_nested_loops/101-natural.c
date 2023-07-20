@@ -9,13 +9,13 @@ int main(void)
 	int i, s;
 
 	s = 0;
-	i = 0;
+	i = 1;
 	while (i * 3 < 1024)
 	{
 		s += i * 3;
 		i++;
 	}
-	i = 0;
+	i = 1;
 	while (i * 5 < 1024)
 	{
 		s += i * 5;
