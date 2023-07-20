@@ -6,10 +6,8 @@
  */
 int main(void)
 {
-	int i;
 	long s1, s, t, es;
 
-	i = 0;
 	s1 = 0;
 	s = 1;
 	es = 0;
