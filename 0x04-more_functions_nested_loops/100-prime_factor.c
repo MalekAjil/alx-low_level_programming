@@ -7,20 +7,28 @@
  */
 int main(void)
 {
-	long i;
+	long long int i, num;
 
-	i = 612852475143;
-	while (i > 1)
+	num = 612852475143;
+
+	long long int lf = 1;
+
+	while (num % 2 == 0)
 	{
-		if (i % 2 == 0)
+		lf = 2;
+		num /= 2;
+	}
+
+	for (i = 3; i <= num; i += 2)
+	{
+		while (num % i == 0)
 		{
-			printf("2");
-			i /= 2;
+			lf = i;
+			num /= i;
 		}
-		else if (i % 3 == 0)
-		{
-			printf("3");
-			i /= 3;
-		}
+	}
+
+	printf("%lld", lf);
+
 	return (0);
 }
