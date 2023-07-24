@@ -9,9 +9,10 @@
  */
 void puts2(char *str)
 {
-	int i;
+	int i, j;
 
-	for (i = 0; i < strlen(str); i++)
+	j = strlen(str);
+	for (i = 0; i < j; i++)
 	{
 		printf("%c\n", str[i]);
 	}
