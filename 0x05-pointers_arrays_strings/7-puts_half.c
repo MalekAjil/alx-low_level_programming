@@ -9,10 +9,14 @@
  */
 void puts_half(char *str)
 {
-	int i, j;
+	int i, j, k;
 
 	j = strlen(str);
-	for (i = j / 2; i < j; i++)
+	if (j % 2 == 0)
+		k = j / 2;
+	else
+		k = (j - 1) / 2;
+	for (i = k; i < j; i++)
 	{
 		printf("%c", str[i]);
 	}
