@@ -2,11 +2,11 @@
 #include<string.h>
 
 /**
- * swap_int - swap the values of two integers
+ * _strlen - returns the length of the string
  * @s: string variable
- * return: str length
+ * Return: str length
  */
 int _strlen(char *s)
 {
-	return strlen(s);
+	return (strlen(s));
 }
