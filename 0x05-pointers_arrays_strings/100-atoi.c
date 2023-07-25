@@ -21,7 +21,7 @@ int _atoi(char *s)
 		if (s[i] > 47 && s[i] < 58)
 		{
 			nb = s[i] - 48;
-			while (i + 1 > 47 && i + 1 < 58)
+			while (s[i + 1] > 47 && s[i + 1] < 58)
 			{
 				++i;
 				nb *= 10;
