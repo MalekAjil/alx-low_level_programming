@@ -9,8 +9,27 @@
  */
 int _atoi(char *s)
 {
-	int nb;
+	int i, j, s, t, nb;
 
-	nb = atoi(s);
+	nb = 0;
+	s = 1;
+	j = strlen(s);
+	for (i = 0; i < j; i++)
+	{
+		if (s[i] == 45)
+			s *= -1;
+		if (s[i] > 47 && s[i] < 58)
+		{
+			nb = s[i] - 48;
+			while (i + 1 > 47 && i + 1 < 58)
+			{
+				++i;
+				nb *= 10;
+				nb += s[i] - 48;
+			}
+			break;
+		}
+	}
+	nb *= s;
 	return (nb);
 }
