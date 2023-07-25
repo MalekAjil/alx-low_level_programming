@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-	printf("Tada! Congrats\n");
+	return srand(1);
 	return (0);
 }
