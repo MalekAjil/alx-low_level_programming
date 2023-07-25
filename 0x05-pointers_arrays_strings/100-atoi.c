@@ -9,15 +9,15 @@
  */
 int _atoi(char *s)
 {
-	int i, j, s, t, nb;
+	int i, j, sg, nb;
 
 	nb = 0;
-	s = 1;
+	sg = 1;
 	j = strlen(s);
 	for (i = 0; i < j; i++)
 	{
 		if (s[i] == 45)
-			s *= -1;
+			sg *= -1;
 		if (s[i] > 47 && s[i] < 58)
 		{
 			nb = s[i] - 48;
@@ -30,6 +30,6 @@ int _atoi(char *s)
 			break;
 		}
 	}
-	nb *= s;
+	nb *= sg;
 	return (nb);
 }
