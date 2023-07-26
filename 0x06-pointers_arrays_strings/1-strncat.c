@@ -10,15 +10,15 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, k, l;
+	int i, l;
 
-	k = strlen(src);
 	l = strlen(dest);
 
-	for (i = l; i <= n + l; i++)
+	for (i = l; i < n + l; i++)
 	{
-		dest[i] = src[i - m];
+		dest[i] = src[i - l];
 	}
+	dest[i] = '\0';
 
 	return (dest);
 }
