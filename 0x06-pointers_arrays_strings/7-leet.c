@@ -9,22 +9,20 @@
 char *leet(char *str)
 {
 	int i, j;
-	static char res[10];
 
 	j = strlen(str);
-	for (i = 0; i <= j; i++)
+	for (i = 0; i < j; i++)
 	{
-		res[i] = str[i];
 		if (str[i] == 'a' || str[i] == 'A')
-			res[i] = '4';
+			str[i] = '4';
 		else if (str[i] == 'e' || str[i] == 'E')
-			res[i] = '3';
+			str[i] = '3';
 		else if (str[i] == 'o' || str[i] == 'O')
-			res[i] = '0';
+			str[i] = '0';
 		else if (str[i] == 't' || str[i] == 'T')
-			res[i] = '7';
+			str[i] = '7';
 		else if (str[i] == 'l' || str[i] == 'L')
-			res[i] = '1';
+			str[i] = '1';
 	}
-	return (res);
+	return (str);
 }
