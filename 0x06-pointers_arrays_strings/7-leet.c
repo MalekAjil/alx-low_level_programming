@@ -9,7 +9,7 @@
 char *leet(char *str)
 {
 	int i, j;
-	char res[10];
+	static char res[10];
 
 	j = strlen(str);
 	for (i = 0; i < j; i++)
@@ -26,5 +26,5 @@ char *leet(char *str)
 		else if (str[i] == 'l' || str[i] == 'L')
 			res[i] = '1';
 	}
-	return (str);
+	return (res);
 }
