@@ -12,7 +12,7 @@ char *leet(char *str)
 	static char res[10];
 
 	j = strlen(str);
-	for (i = 0; i < j; i++)
+	for (i = 0; i <= j; i++)
 	{
 		res[i] = str[i];
 		if (str[i] == 'a' || str[i] == 'A')
