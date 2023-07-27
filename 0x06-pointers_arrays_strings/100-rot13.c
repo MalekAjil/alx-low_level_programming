@@ -15,8 +15,20 @@ char *rot13(char *str)
 	strcpy(dest, str);
 	for (i = 0; i < j; i++)
 	{
-		if ((str[i] > 64 && str[i] < 91) || (str[i] > 96 && str[i] < 123))
-			dest[i] = str[i] + 13;
+		if (str[i] > 64 && str[i] < 91)
+		{
+			if (str[i] + 13 > 90)
+				dest[i] = str[i] - 13;
+			else
+				dest[i] = str[i] + 13;
+		}
+		else if (str[i] > 96 && str[i] < 123)
+		{
+			if (str[i] + 13 > 122)
+				dest[i] = str[i] - 13;
+			else
+				dest[i] = str[i] + 13;
+		}
 	}
 	return (dest);
 }
