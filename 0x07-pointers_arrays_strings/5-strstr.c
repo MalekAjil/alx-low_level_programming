@@ -13,11 +13,12 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i, j, n, m, l;
 
-	l = 0;
 	n = strlen(haystack);
 	m = strlen(needle);
 
 	for (i = 0; i < n; i++)
+	{
+		l = 0;
 		if (haystack[i] == needle[0])
 		{
 			for (j = 0; j < m && i + j < n; j++)
@@ -28,6 +29,7 @@ char *_strstr(char *haystack, char *needle)
 					return (&haystack[i]);
 			}
 		}
+	}
 
 	return (NULL);
 }
