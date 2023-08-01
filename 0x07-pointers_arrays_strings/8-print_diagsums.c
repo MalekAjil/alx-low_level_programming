@@ -3,8 +3,9 @@
 #include <stdio.h>
 
 /**
- * print_chessboard - prints a chessboard.
- * @a: the chessboard
+ * print_diagsums - prints the two diagonals sums.
+ * @a: the two dimetional array
+ * @size: the size of array
  * Return: void
  */
 void print_diagsums(int *a, int size)
@@ -23,9 +24,7 @@ void print_diagsums(int *a, int size)
 				d1 += a[i + j];
 			if ((i / size) + j == size - 1)
 				d2 += a[i + j];
-			printf("%d ,",a[i + j]);
 		}
-		printf("\n");
 	}
 	printf("%d, %d\n", d1, d2);
 }
