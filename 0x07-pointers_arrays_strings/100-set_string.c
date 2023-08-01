@@ -10,11 +10,11 @@
  */
 void set_string(char **s, char *to)
 {
-	int i, n;
+	int i;
 
-	n = strlen(*s);
-	for (i = 0; i < n; i++)
+	for (i = 0; s[i][0] >= '\0'; i++)
 	{
+		printf("%c", s[i][0]);
 		to[i] = *s[i];
 	}
 
