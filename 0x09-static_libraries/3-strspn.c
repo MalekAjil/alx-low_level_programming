@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * _strspn -  returns the number of bytes in the initial segment of s
@@ -10,20 +9,24 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, n, m;
+	int i, j;
 	unsigned int l;
 
 	l = 0;
-	n = strlen(s);
-	m = strlen(accept);
-	for (i = 0; i < n; i++)
-		for (j = 0; j < m; j++)
+	i = 0;
+	while (s[i] !='\0')
+	{
+		j = 0;
+		while (accept[j] != '\0')
 		{
 			if (s[i] == accept[j])
 				l++;
 			if (s[i] == ' ' && l > 0)
 				return (l);
+			j++;
 		}
+		i++;
+	}
 
 	return (l);
 }

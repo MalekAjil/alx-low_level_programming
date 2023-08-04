@@ -1,5 +1,4 @@
 #include "main.h"
-#include<string.h>
 
 /**
  * _strcpy - copy string from src to dest
@@ -11,10 +10,11 @@ char *_strcpy(char *dest, char *src)
 {
 	int i, j;
 
-	j = strlen(src);
-	for (i = 0; i <= j; i++)
+	i = 0;
+	while (src[i] !='\0')
 	{
 		dest[i] = src[i];
+		i++;
 	}
 	return (dest);
 }

@@ -1,6 +1,4 @@
 #include "main.h"
-#include "string.h"
-#include <stdlib.h>
 
 /**
  * _atoi - return integer from string
@@ -9,13 +7,13 @@
  */
 int _atoi(char *s)
 {
-	int i, j, sg;
+	int i, sg;
 	unsigned int nb;
 
 	nb = 0;
 	sg = 1;
-	j = strlen(s);
-	for (i = 0; i < j; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
 		if (s[i] == 45)
 			sg *= -1;
@@ -30,6 +28,7 @@ int _atoi(char *s)
 			}
 			break;
 		}
+		i++;
 	}
 	nb *= sg;
 	return (nb);
