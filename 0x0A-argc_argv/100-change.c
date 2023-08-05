@@ -29,8 +29,8 @@ int main(int argc, char **argv)
 			sum += i / 2;
 			i = i % 2;
 			sum += i;
+			printf("%d\n", sum);
 		}
-		printf("%d\n", sum);
 	}
 	else
 	{
