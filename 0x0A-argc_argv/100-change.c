@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 			sum += i / 5;
 			i = i % 5;
 			sum += i / 2;
-			i = i %2;
+			i = i % 2;
 			sum += i;
 		}
 		printf("%d\n", sum);
