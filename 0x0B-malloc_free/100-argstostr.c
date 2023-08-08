@@ -7,7 +7,6 @@
  * @av: arguments values.
  * Return: Concatenated string of arguments values.
  */
-int _strlen(char *str);
 char *argstostr(int ac, char **av)
 {
 	int i, j, k, size;
@@ -27,13 +26,16 @@ char *argstostr(int ac, char **av)
 		while (av[i][j] != '\0')
 		{
 			str[k++] = av[i][j++];
-			
 		}
 		str[k++] = '\n';
 	}
 	return (str);
 }
-
+/**
+ * _strlen - return the length of the string
+ * @str: the string
+ * Return: the length
+ */
 int _strlen(char *str)
 {
 	int i;
