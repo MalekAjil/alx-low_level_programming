@@ -12,11 +12,11 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int i, size;
-	char *a;
-
 	if (str == NULL)
 		return (NULL);
+
+	unsigned int i, size;
+	char *a;
 
 	size = 0;
 	while (str[i] != '\0')
