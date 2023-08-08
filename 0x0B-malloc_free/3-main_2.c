@@ -41,8 +41,8 @@ int main(void)
 	int h;
 	int w;
 
-	h = 0;
-	w = 0;
+	h = 48;
+	w = 32;
 	grid = alloc_grid(h, w);
 	if (grid == NULL)
 	{
