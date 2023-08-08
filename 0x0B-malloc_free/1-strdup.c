@@ -21,7 +21,7 @@ char *_strdup(char *str)
 	size = 0;
 	while (str[size] != '\0')
 		size++;
-	a = malloc(sizeof(*str) * size);
+	a = malloc(sizeof(*str) * size + 1);
 	i = 0;
 	while (str[i] != '\0')
 	{
