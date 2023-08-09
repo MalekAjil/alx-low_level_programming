@@ -32,13 +32,13 @@ char **strtow(char *str)
 		j++;
 		if ((str[i] == ' ' && i > 0 && str[i - 1] != ' ')
 			       || str[i] == '\0')
-		{
-			i++;
+		{			
 			s[c] = (char *)malloc(sizeof(*str) * j);
 			for (k = 0; k < j; k++)
 				s[c][k] = str[i - j + k];
 			s[c][k] = '\0';
 			c++;
+			i++;
 			j = 0;
 		}
 		i++;
