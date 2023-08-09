@@ -12,11 +12,11 @@ int words_count(char *str)
 
 	c = 0;
 	i = 0;
-	do {
+	for (i = 0; str[i] >= '\0'; i++)
+	{
 		if ((str[i] == ' ' || str[i] == '\0') && i > 0 && str[i - 1] != ' ')
 			c++;
-		i++;
-	}  while (str[i] != '\0');
+	}
 	return (c);
 }
 /**
@@ -39,13 +39,13 @@ char **strtow(char *str)
 	if (s == NULL)
 		return (NULL);
 	c = 0;
-	i = 0;
 	j = 0;
-	do {
+	for (i = 0; str[i] >= '\0'; i++)
+	{
 		j++;
 		if ((str[i] == ' ' || str[i] == '\0') && i > 0 && str[i - 1] != ' ')
 		{
-			s[c] = (char *)malloc(sizeof(*str) * j);
+			s[c] = (char *)malloc(sizeof(*str) * j + 1);
 			if (s[c] == NULL)
 			{
 				while (c >= 0)
@@ -53,15 +53,14 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			for (k = 0; k < j; k++)
-				s[c][k] = str[i - j + k];
+				s[c][k] = str[i + 1 - j + k];
 			s[c][k] = '\0';
 			c++;
-			i++;
 			j = 0;
 		}
 		else if (str[i] == ' ')
 			j = 0;
-		i++;
-	} while (str[i] != '\0');
+	}
+	s[c] = NULL;
 	return (s);
 }
