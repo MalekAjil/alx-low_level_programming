@@ -11,7 +11,7 @@ char **strtow(char *str)
 	int i, j, k, c;
 	char **s;
 
-	if (str == NULL)
+	if (str == NULL || str[0] == '\n')
 		return (NULL);
 
 	c = 0;
@@ -32,12 +32,12 @@ char **strtow(char *str)
 		j++;
 		if (str[i] == ' ' || str[i] == '\0')
 		{
+			i++;
 			s[c] = (char *)malloc(sizeof(*str) * j);
 			for (k = 0; k < j; k++)
 				s[c][k] = str[i - j + k];
 			s[c][k] = '\0';
-			c++;
-			i++;
+			c++;			
 			j = 0;
 		}
 		i++;
