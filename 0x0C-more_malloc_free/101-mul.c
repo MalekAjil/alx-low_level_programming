@@ -7,7 +7,7 @@
  * print_error - prints error message with exit code 98.
  * Return: void
  */
-void print_error()
+void print_error(void)
 {
 	_putchar('E');
 	_putchar('r');
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 {
 	long int num1, num2;
 
-	if (argc ==3)
+	if (argc == 3)
 	{
 		num1 = atoi(argv[1]);
 		num2 = atoi(argv[2]);
