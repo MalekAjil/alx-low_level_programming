@@ -75,8 +75,8 @@ void print_num(long int num)
  */
 int main(int argc, char **argv)
 {
-	 long int num1, num2;
-	 
+	long int num1, num2;
+
 	if (argc == 3)
 	{
 		num1 = strtnum(argv[1]);
