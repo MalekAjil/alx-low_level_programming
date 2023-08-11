@@ -20,9 +20,9 @@ void print_error(void)
  * @str: the string.
  * Return: the number.
  */
-unsigned long int strtnum(char *str)
+long int strtnum(char *str)
 {
-	unsigned long int num, t;
+	long int num, t;
 	int i, j, k;
 
 	num = 0;
@@ -55,8 +55,13 @@ unsigned long int strtnum(char *str)
  * @num: the number.
  * Return: void
  */
-void print_num(unsigned long int num)
+void print_num(long int num)
 {
+	if (num < 0)
+	{
+		_putchar('-');
+		num *= -1;
+	}
 	if (num / 10)
 		print_num(num / 10);
 	_putchar('0' + (num % 10));
@@ -70,8 +75,8 @@ void print_num(unsigned long int num)
  */
 int main(int argc, char **argv)
 {
-	unsigned long int num1, num2;
-
+	 long int num1, num2;
+	 
 	if (argc == 3)
 	{
 		num1 = strtnum(argv[1]);
