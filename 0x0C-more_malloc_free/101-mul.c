@@ -24,7 +24,7 @@ void print_error(void)
  */
 int main(int argc, char **argv)
 {
-	long int num1, num2;
+	unsigned long int num1, num2;
 
 	if (argc == 3)
 	{
