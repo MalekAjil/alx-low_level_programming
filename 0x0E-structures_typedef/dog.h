@@ -23,6 +23,16 @@ typedef struct dog
 #endif
 #endif
 
+#ifndef dogi1
+#define dogi1
 void init_dog(struct dog *d, char *name, float age, char *owner);
+#endif
+#ifndef dogh1
+#define dogh1
 void print_dog(struct dog *d);
+#endif
 
+#ifndef newdog
+#define newdog
+dog_t *new_dog(char *name, float age, char *owner);
+#endif
