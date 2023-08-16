@@ -8,6 +8,5 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	void (*myfun)(*char) = f;
-	f(name);
+	(*f)(name);
 }
