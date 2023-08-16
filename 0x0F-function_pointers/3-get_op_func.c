@@ -8,7 +8,7 @@
  *
  * Return: a pionter to correct function
  */
-int (*get_op_func(char *s))(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
 	int i;
 	op_t ops[] = {
@@ -21,11 +21,11 @@ int (*get_op_func(char *s))(int a, int b)
 	};
 
 	i = 0;
-	while (strcmp((char*)ops[i], NULL) != 0)
+	while (ops[i].op != NULL)
 	{
-		if (strcmp((char*)ops[i], s) == 0)
-			return ((*ops[i + 1])(a, b));
-		i += 2;
+		if (ops[i].op == s)
+			return (ops[i].f);
+		i++;
 	}
-	return (-1);
+	return (NULL);
 }
