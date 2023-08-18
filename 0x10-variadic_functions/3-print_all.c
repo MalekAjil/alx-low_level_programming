@@ -30,15 +30,17 @@ void print_all(const char * const format, ...)
 			case 's':
 				s = va_arg(lst, char*);
 				if (s == NULL)
+				{
 					printf("(nil)");
-				else
-					printf("%s", s);
+					break;
+				}
+				printf("%s", s);
 				break;
 			default:
 				break;
 		}
 		if ((format[n] == 'c' || format[n] == 'i' || format[n] == 'f'
-				|| format[n] == 's') && format[n + 2] != '\n')
+				|| format[n] == 's') && format[n + 1] != '\n')
 			printf(", ");
 		n++;
 	}
