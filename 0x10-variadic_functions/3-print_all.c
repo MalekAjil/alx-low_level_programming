@@ -39,11 +39,10 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		/*
-		* if ((format[n] == 'c' || format[n] == 'i' || format[n] == 'f'
-		*		|| format[n] == 's') && format[n + 1] != '\n')
-		*	printf(", ");
-		*/
+		if ((format[n] == 'c' || format[n] == 'i' || format[n] == 'f'
+				|| format[n] == 's') && format[n + 1] != '\0')
+			printf(", ");
+
 		n++;
 	}
 	printf("\n");
