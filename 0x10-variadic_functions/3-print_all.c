@@ -8,17 +8,26 @@
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i;
+	unsigned int i, n;
 	va_list lst;
 	char *s;
 
-	va_start(lst, n);
-	for (i = n; i > 0; i--)
+	n = 0;
+	while (format[n] != '\0')
+	{
+		if (format[n] == 'c' || format[n] == 'i'
+				|| format[n] == 'f' || format[n] == 's')
+			n++;
+	}
+	va_start(lst, format);
+	i = n;
+	while (i > 0)
 	{
 		s = va_arg(lst, char*);
-		printf("%s", s == NULL ? "(nil)" : s);
-		if (separator != NULL && i != 1)
-			printf("%s", separator);
+		printf("%s", s);
+		if (i != 1)
+			printf(", ");
+		i--;
 	}
 	printf("\n");
 	va_end(lst);
