@@ -14,6 +14,6 @@ main:
 ; The data section - declaring constants
 section .data
 	msg db "Hello, Holberton", 0xa	;or 10 
-	len equ -msg
+	len equ $ -msg
 
 ; The bss section - declaring variables
