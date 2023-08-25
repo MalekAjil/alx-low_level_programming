@@ -3,7 +3,7 @@
 
 /**
  * free_list - frees the list
- * @header: the list header
+ * @head: the list header
  * Return: void.
  */
 void free_list(list_t *head)
@@ -13,6 +13,7 @@ void free_list(list_t *head)
 	while (head->next != NULL)
 	{
 		temp = head->next;
+		free(head->str);
 		free(head);
 		head = temp;
 	}
