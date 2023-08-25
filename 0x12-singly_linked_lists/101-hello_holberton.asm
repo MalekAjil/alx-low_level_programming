@@ -1,12 +1,11 @@
-section .text
-	global main
+global main
+extern printf
 
+section .text
 main:
-	mov edx, len
-	mov ecx, msg
-	mov ebx, 1
-	mov eax, 4	;system call (sys_write)
-	int 0x80	; to call kernel
+	xor eax, eax
+	lea rdi, [msg]	;first parameter
+	call printf
 
 	mov eax, 1	;system call (sys_exit)
 	int 0x080
