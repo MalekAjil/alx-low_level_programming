@@ -1,18 +1,21 @@
+section .text
 global main
 extern printf
 
-section .text
 main:
 	xor eax, eax
-	lea rdi, [msg]	;first parameter
+	mov rdi, frm	;first parameter
+	mov rsi, msg
 	call printf
 
-	mov eax, 1	;system call (sys_exit)
-	int 0x080
+	mov rax, 60	;system call (sys_exit)
+	xor rdi, rdi	; 0
+	syscall
+	
 
 ; The data section - declaring constants
 section .data
 	msg db "Hello, Holberton", 0xa	;or 10 
-	len equ $ -msg
+	frm db "%s", 0
 
 ; The bss section - declaring variables
