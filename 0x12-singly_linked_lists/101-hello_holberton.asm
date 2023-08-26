@@ -4,12 +4,12 @@ section .text
 
 main:
 	push rbp
-	mov rdi, frm  ; 1st arg
-	mov rsi, msg   ; 2nd arg
+	mov rdi, msg  ; 1st arg
+;	mov rsi, msg   ; 2nd arg
 	call printf
 	pop rbp
 	ret
 
 section .data
-    msg db "Hello, Holberton",0
+    msg db "Hello, Holberton", 10
     frm db "%s", 10, 0
