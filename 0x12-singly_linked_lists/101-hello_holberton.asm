@@ -1,21 +1,15 @@
 section .text
-global main
-extern printf
+	global main
+	extern printf
 
 main:
-	xor eax, eax
-	mov rdi, frm	;first parameter
-	mov rsi, msg
+	push rbp
+	mov rdi, frm  ; 1st arg
+	mov rsi, msg   ; 2nd arg
 	call printf
+	pop rbp
+	ret
 
-	mov rax, 60	;system call (sys_exit)
-	xor rdi, rdi	; 0
-	syscall
-	
-
-; The data section - declaring constants
 section .data
-	msg db "Hello, Holberton", 0xa	;or 10 
-	frm db "%s", 0
-
-; The bss section - declaring variables
+    msg db "Hello, Holberton",0
+    frm db "%s", 10, 0
