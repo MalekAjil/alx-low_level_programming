@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * free_list - frees the list
+ * free_listnt - frees the list
  * @head: the list header
  * Return: void.
  */
