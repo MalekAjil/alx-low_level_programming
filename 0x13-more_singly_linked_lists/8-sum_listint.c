@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * sun_listint - returns the sum of elements in a linked listint_t list.
- * @h: the head of the list
+ * sum_listint - returns the sum of elements in a linked listint_t list.
+ * @head: the head of the list
  * Return: returns the sum of elements in a linked listint_t list.
  */
 int sum_listint(listint_t *head)
