@@ -3,11 +3,12 @@
 /**
  * binary_to_uint - convert a binary number to an unsigned int
  * @b: is pointing to a string of 0 and 1 chars
- * return: the converted number, or 0 
+ * Return: the converted number, or 0
  */
 unsigned int binary_to_uint(const char *b)
 {
 	int n = 0, i = 0, m = 1;
+
 	if (b != NULL)
 	{
 		while (b[i] != '\0')
