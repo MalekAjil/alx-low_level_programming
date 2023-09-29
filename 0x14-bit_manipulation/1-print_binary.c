@@ -7,7 +7,21 @@
  */
 void print_binary(unsigned long int n)
 {
-	if (n / 2)
-		print_binary(n / 2);
-	_putchar('0' + (n % 2));
+	unsigned long int m = n, b = 1;
+
+	while (m)
+	{
+		m = m>>1;
+		if (!m)
+			break;
+		b = b<<1;
+	}
+	while (b)
+	{
+		if (n&b)
+			_putchar('1');
+		else
+			_putchar('0');
+		b = b>>1;
+	}
 }
