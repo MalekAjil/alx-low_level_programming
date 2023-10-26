@@ -10,6 +10,8 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int m = 1;
 
+	if (index > 100)
+		return (-1);
 	m = m << index;
 	if (n & m)
 		return (1);
