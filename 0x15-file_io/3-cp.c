@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-#define buffer 1024
+#define BUFFER 1024
 
 /**
  * main - check the code
@@ -12,6 +12,7 @@
 int main(int ac, char **av)
 {
 	int file_from, fd_from, file_to, fd_to;
+	char str[BUFFER];
 
 	if (ac != 3)
 	{
@@ -30,18 +31,18 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: Can't write to %s\n", av[2]);
 		exit(99);
 	}
+
 	fd_from = close(file_from);
-	if (fd_from != 0)
+	if (fd_from == -1)
 	{
-		dprintf(2, "Usage: Can't close fd %d\n", fd_from);
+		dprintf(2, "Usage: Can't close fd %d\n", file_from);
 		exit(100);
 	}
 	fd_to = close(file_to);
-	if (fd_to != 0)
+	if (fd_to == -1)
 	{
-		dprintf(2, "Usage: Can't close fd %d\n", fd_to);
+		dprintf(2, "Usage: Can't close fd %d\n", file_to);
 		exit(100);
 	}
-	printf("-> %i)\n", res);
 	return (0);
 }
