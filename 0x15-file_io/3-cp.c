@@ -24,7 +24,7 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	file_to = open (av[2], "w");
+	file_to = open(av[2], "w");
 	if (file_to == -1)
 	{
 		dprintf(2, "Usage: Can't write to %s\n", av[2]);
