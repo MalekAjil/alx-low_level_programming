@@ -9,15 +9,17 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *fp;
+	int fp;
+	int len = strlen(text_content);
 
 	if (filename == NULL)
 		return (-1);
-	fp = fopen(filename, "wb");
-	if (fp == NULL)
+	fp = open(filename, O_WRONLY | O_CREAT, 0600);
+	if (fp == -1)
 		return (-1);
 	if (text_content != NULL)
-		fprintf(fp, "%s", text_content);
-	fclose(fp);
+		if (write(fp, text_content, len) != len)
+			return (-1);
+	close(fp);
 	return (1);
 }
