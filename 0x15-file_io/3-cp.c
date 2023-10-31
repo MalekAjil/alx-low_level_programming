@@ -13,25 +13,36 @@ int main(int ac, char **av)
 {
 	int file_from, fd_from, file_to, fd_to;
 	char str[BUFFER];
+	ssize_t n;
 
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	file_from = open(av[1], "r");
+	file_from = open(av[1], O_RDONLY);
 	if (file_from == -1)
 	{
 		dprintf(2, "Usage: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	file_to = open(av[2], "w");
+	file_to = open(av[2], O_WRONLY | O_CREAT, 0664);
 	if (file_to == -1)
 	{
 		dprintf(2, "Usage: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-
+	n = read(file_from, str, BUFFER);
+        if (n == -1)
+        {
+		dprintf(2, "Usage: Can't read from file %s\n", av[1]);
+		exit(98);
+        }
+	if (write(file_to, str, n) != n)
+	{
+		dprintf(2, "Usage: Can't write to %s\n", av[2]);
+		exit(99);
+	}
 	fd_from = close(file_from);
 	if (fd_from == -1)
 	{
