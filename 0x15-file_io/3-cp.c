@@ -60,16 +60,18 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	open_files(av, fd);
-	n = read(fd[0], str, BUFFER);
-	if (n == -1)
+	while ((n = read(fd[0], str, BUFFER)) != 0)
 	{
-		dprintf(2, "Usage: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-	if (write(fd[1], str, n) != n)
-	{
-		dprintf(2, "Usage: Can't write to %s\n", av[2]);
-		exit(99);
+		if (n == -1)
+		{
+			dprintf(2, "Usage: Can't read from file %s\n", av[1]);
+			exit(98);
+		}
+		if (write(fd[1], str, n) != n)
+		{
+			dprintf(2, "Usage: Can't write to %s\n", av[2]);
+			exit(99);
+		}
 	}
 	close_files(fd);
 	return (0);
