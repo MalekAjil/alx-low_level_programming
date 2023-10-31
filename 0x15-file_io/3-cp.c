@@ -74,5 +74,7 @@ int main(int ac, char **av)
 		}
 	}
 	close_files(fd);
+	free(str);
+	free(fd);
 	return (0);
 }
