@@ -51,7 +51,7 @@ void close_files(int *fd)
 int main(int ac, char **av)
 {
 	int fd[4];
-	char str[BUFFER];
+	char *str = malloc(sizeof(char) * BUFFER);
 	ssize_t n;
 
 	if (ac != 3)
@@ -75,6 +75,5 @@ int main(int ac, char **av)
 	}
 	close_files(fd);
 	free(str);
-	free(fd);
 	return (0);
 }
