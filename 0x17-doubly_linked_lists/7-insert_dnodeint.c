@@ -24,7 +24,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 	{
-		dprintf(2, "Error: Can't malloc\n");
 		return (NULL);
 	}
 	new->n = n;
