@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * sum_dnodeint - returns the sum of dlistint_t list.
+ * sum_dlistint - returns the sum of dlistint_t list.
  * @head: the head of the list
  * Return: the dum of the elements
  */
