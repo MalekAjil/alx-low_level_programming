@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdlib.h>
+#include <unistd.h>
+
 
 /**
  * _isdigit - check whether the char is digit or not
