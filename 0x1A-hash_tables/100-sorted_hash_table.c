@@ -58,7 +58,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-	hash_node_t *node;
+	shash_node_t *node;
 	unsigned long int idx = 0;
 
 	if (ht == NULL || key == NULL)
@@ -119,7 +119,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	if (ht == NULL)
 		return;
 	printf("{");
-	for (idx = 0; idx < ht->size; idx++)
+	for (idx = ht->size - 1; idx; idx--)
 	{
 		node = ht->array[idx];
 		while (node != NULL)
