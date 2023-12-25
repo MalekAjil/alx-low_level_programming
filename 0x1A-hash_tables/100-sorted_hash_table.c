@@ -54,6 +54,25 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	node->value = strdup(value);
 	node->next = next;
 	ht->array[idx] = node;
+	if (ht->shead == NULL)
+		ht->shead = node;
+	else if (ht->stail == NULL)
+	{
+		if (strcmp(ht->shead->key, node->key) > 0)
+		{
+			node->sprev = ht->shead;
+			ht->stail = node;
+			ht->shead->snext = node;
+		}
+		else
+		{
+			ht->shead->sprev = node;
+			ht->stail = ht->shead;
+			node->snext = ht->stail;
+			ht->shead = node;
+		}
+	}
+
 	return (1);
 }
 
