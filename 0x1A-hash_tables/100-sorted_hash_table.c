@@ -42,6 +42,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		next = ht->array[idx];
 		if (!strcmp(next->key, key))
 		{
+			free(next->value);
 			next->value = strdup(value);
 			return (1);
 		}
