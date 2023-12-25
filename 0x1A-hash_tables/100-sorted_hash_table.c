@@ -58,7 +58,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		ht->shead = node;
 	else if (ht->stail == NULL)
 	{
-		if (strcmp(ht->shead->key, node->key) > 0)
+		if (strcmp(ht->shead->key, node->key) < 0)
 		{
 			node->sprev = ht->shead;
 			ht->stail = node;
