@@ -1,2 +1,2 @@
-all: school
-
+say_hello:
+	echo "Hello World"
