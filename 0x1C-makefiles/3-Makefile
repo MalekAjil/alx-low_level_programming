@@ -1,0 +1,26 @@
+.PHONY: all clean oclean fclean re
+#__VARIABLES__
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+
+#__RULES__
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	${CC} -o $@ $^
+
+%.o: %.c
+	${CC} -c $<
+
+clean:
+	$(RM) *~ *
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
