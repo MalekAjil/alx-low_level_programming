@@ -1,0 +1,28 @@
+.PHONY: all clean oclean fclean re
+#__VARIABLES__
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+HEADR = m.h
+
+#__RULES__
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	${CC} ${CFLAGS} -o $@ $^
+
+%.o: %.c $(HEADER)
+	${CC} ${CFLAGS} -c $<
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
