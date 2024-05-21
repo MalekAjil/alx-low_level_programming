@@ -1,4 +1,31 @@
 #include "search_algos.h"
+
+/**
+ * search - recursive function
+ * @array: the array
+ * @left: the left side
+ * @right: the right side
+ * @value: the value
+ */
+int search( int *array, int left, int right, int value)
+{
+	int i, mid;
+
+	printf("Searching in array: ");
+	for (i = left; i < (int)right; i++)
+		printf("%d, ", array[i]);
+	printf("\n");
+	if (right < left)
+		return (-1);
+	mid = (int)(left + right) / 2;
+	if (array[mid] == value)
+		return (mid);
+	else if (array[mid] > value)
+		search(array, left, mid - 1, value);
+	else
+		search(array, mid + 1, right, value);
+	return (-1);
+}
 /**
  * binary_search - returns the first occurance of [value]
  * @array: the array
@@ -8,15 +35,7 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int i = 0;
-
 	if (array  == NULL)
 		return (-1);
-	for (i = 0; i < (int)size; i++)
-	{
-		printf("Value checked array[%d] = [%d]\n", i, array[i]);
-		if (array[i] == value)
-			return (i);
-	}
-	return (-1);
+	return (search(array, 0, (int)size, value));
 }
