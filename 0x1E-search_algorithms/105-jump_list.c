@@ -15,8 +15,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	size_t step = b;
 	listint_t *tmp = list;
 
-	if (array == NULL)
-		return (-1);
+	if (list == NULL)
+		return (NULL);
 	while (tmp->index < a)
 		tmp = tmp->next;
 	while (step < size && tmp->n < value)
@@ -38,7 +38,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	if (a < size && tmp->n == value)
 	{
 		printf("Value checked at index [%lu] = [%d]\n", a, tmp->n);
-		return ((int)a);
+		return (tmp);
 	}
-	return (-1);
+	return (NULL);
 }
