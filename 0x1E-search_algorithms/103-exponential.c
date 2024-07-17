@@ -21,31 +21,31 @@ size_t min(size_t a, size_t b)
  */
 int search(int *array, int left, int right, int value)
 {
-        int i, mid;
+	int i, mid;
 
-        printf("Searching in array: ");
-        for (i = left; i <= (int)right; i++)
-        {
-                printf("%d", array[i]);
-                if (i != right)
-                        printf(", ");
-        }
-        printf("\n");
-        if (right == left)
-        {
-                if (array[left] == value)
-                        return (left);
-                else
-                        return (-1);
-        }
-        mid = (int)(left + right) / 2;
-        if (array[mid] == value)
-                return (mid);
-        else if (array[mid] > value)
-                return (search(array, left, mid - 1, value));
-        else
-                return (search(array, mid + 1, right, value));
-        return (-1);
+	printf("Searching in array: ");
+	for (i = left; i <= (int)right; i++)
+	{
+		printf("%d", array[i]);
+		if (i != right)
+			printf(", ");
+	}
+	printf("\n");
+	if (right == left)
+	{
+		if (array[left] == value)
+			return (left);
+		else
+			return (-1);
+	}
+	mid = (int)(left + right) / 2;
+	if (array[mid] == value)
+		return (mid);
+	else if (array[mid] > value)
+		return (search(array, left, mid - 1, value));
+	else
+		return (search(array, mid + 1, right, value));
+	return (-1);
 }
 /**
  * exponential_search - searches for a value in a sorted array of integers
